@@ -1,0 +1,121 @@
+/*images downloaded from https://randomwordgenerator.com/picture.php, thank you random website*/
+
+:root {
+ --side-one-rgb: rgba(133, 133, 177, 0.2);
+ --side-two-rgb: rgba(221, 153, 144, 0.2);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 100vh;  
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgb(146, 33, 33);
+    white-space: nowrap;
+    
+}
+.side.one h1{
+    font-size: calc(4.3* 2vw);
+    color: brown;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.side.two h1{
+    font-size: calc(4.3* 2vw);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-top: 25px;
+}
+.side {
+    position:absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.side.one {
+    left: 0;
+    background: url(./img/side1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.side.one::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--side-one-rgb);
+}
+
+.side.two {
+    right: 0;
+    background: url(./img/side2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.side.two::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--side-two-rgb);
+}
+
+.side.one, .side.two, .side.one::before, .side.two::before {
+    transition: all 0.3s ease-in-out;
+    height: 100%;
+}
+
+.choose { 
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    text-decoration: none;
+    transform: translateX(-50%);
+    color: blanchedalmond;
+    font-size: 1.4em;
+    border: 3px solid blanchedalmond;
+    padding: calc(4.3 * 0.43vw);
+}
+
+.side.one .choose:hover {
+    background-color: rgb(133, 133, 177);
+    color: black;
+    border-color: black;
+    transition: border-color 0.43s;
+}
+
+.side.two .choose:hover {
+    background-color: rgba(221, 153, 144);
+    color: black;
+    border-color: black;
+    transition: border-color 0.43s;
+}
+
+.hover-first .one{
+   width: 60%
+}
+
+.hover-first .two{
+    width: 40%;
+ }
+
+ .hover-second .one{
+    width: 40%;
+ }
+ 
+ .hover-second .two{
+     width: 60%;
+  }
